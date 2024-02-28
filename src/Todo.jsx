@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
-import './ToDo.css'; // Import your CSS file
+import './ToDo.css';
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
+import SendIcon from '@mui/icons-material/Send';
 
 export default function TO_DO() {
     let [Todo,setTodo] = useState([{list:"Krishna",id:uuidv4(),mark:false}]);
@@ -90,7 +93,7 @@ export default function TO_DO() {
 
             <input type="text" value={addToDO} onChange={newToDO} />
             <br /> <br />
-            <button className="add-button" onClick={addItem}>ADD TASK</button>
+            <Button variant="contained" className="add-button"  onClick={addItem}  endIcon={<SendIcon />}>Add Task</Button>
             <hr />
             <ul>
                 {
@@ -99,23 +102,30 @@ export default function TO_DO() {
                             <li key={el.id}>
                                 <span className={el.mark ? "completed" : ""}>{el.list}</span>
                                 &nbsp;&nbsp;
-                                <button className="delete-button" onClick={() => deleteTask(el.id)}>Delete</button>
+                                <Button variant="outlined" className="delete-button" onClick={() => deleteTask(el.id)} startIcon={<DeleteIcon />}>Delete</Button>
                                 &nbsp;&nbsp;
-                                <button className="done-button" onClick={() => markDone(el.id)}>Mark As Done</button>
+                                
+                                <button type="button" className="btn btn-light" onClick={() => markDone(el.id)} >Markasdone</button>
                                 &nbsp;&nbsp;
-                                <button className="uppercase-button" onClick={() => upperCaseOne(el.id)}>Uppercase</button>
+                               
+                                <button type="button" className="btn btn-light" onClick={() => upperCaseOne(el.id)}>Uppercase</button>
                                 &nbsp;&nbsp;
-                                <button className="lowercase-button" onClick={() => lowerCaseOne(el.id)}>Lowercase</button>
+                                
+                                <button type="button" className="btn btn-light" onClick={() => lowerCaseOne(el.id)}>Lowercase</button>
+
                             </li>
                         </div>
                     ))
                 }
             </ul>
-            <button className="uppercase-button" onClick={uppercase}>UPPERCASE ALL</button>
+           
+            <button type="button" className="btn btn-light" onClick={uppercase}>Uppercase All</button>
             &nbsp;&nbsp; &nbsp;&nbsp;
-            <button className="lowercase-button" onClick={lowercase}>LOWERCASE ALL</button>
+           
+            <button type="button" className="btn btn-light"  onClick={lowercase} >Lowercase All</button>
             &nbsp;&nbsp; &nbsp;&nbsp;
-            <button className="alldone-button" onClick={markAll}>All Done</button>
+            
+            <button type="button" className="btn btn-light" onClick={markAll} >All Done</button>
         </div>
     )
 }
