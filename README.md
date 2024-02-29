@@ -1,8 +1,13 @@
-# React + Vite
+# ABOUT 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# A React based To-do List.
 
-Currently, two official plugins are available:
+Here I using pure React to build TO-DO list . In this you can -- 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Add/Delete your Task.
+# Mark as done.
+# you can Change it to both in Uppercase and lowercase.
+
+
+# PLEASE NOT THAT -- I am  focus on core logic rather than building user-interface that is why i am giving just basic style to it.
+
